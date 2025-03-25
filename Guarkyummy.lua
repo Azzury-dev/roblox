@@ -2,4 +2,4 @@
 
 local gameid = game.PlaceId
 
-if(gameid =)
+print('asd')
