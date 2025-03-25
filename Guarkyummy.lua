@@ -7,26 +7,12 @@ local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
 
--- ScreenGui
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "GuarkYummyUI"
 ScreenGui.ResetOnSpawn = false
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ScreenGui.Parent = PlayerGui
 
--- Faux Glow (image floutée derrière)
-local Glow = Instance.new("ImageLabel")
-Glow.Size = UDim2.new(0, 620, 0, 370)
-Glow.Position = UDim2.new(0.5, -310, 0.5, -185)
-Glow.BackgroundTransparency = 1
-Glow.Image = "rbxassetid://4996891970" -- Glow violet
-Glow.ImageColor3 = Color3.fromRGB(170, 0, 255)
-Glow.ScaleType = Enum.ScaleType.Slice
-Glow.SliceCenter = Rect.new(20, 20, 80, 80)
-Glow.ZIndex = 0
-Glow.Parent = ScreenGui
-
--- Main UI Frame
 local Main = Instance.new("Frame")
 Main.Size = UDim2.new(0, 600, 0, 350)
 Main.Position = UDim2.new(0.5, -300, 0.5, -175)
@@ -37,11 +23,21 @@ Main.Parent = ScreenGui
 Main.Active = true
 Main.Draggable = true
 
+local Glow = Instance.new("ImageLabel")
+Glow.Size = UDim2.new(0, 620, 0, 370)
+Glow.Position = UDim2.new(0.5, -310, 0.5, -185)
+Glow.BackgroundTransparency = 1
+Glow.Image = "rbxassetid://4996891970"
+Glow.ImageColor3 = Color3.fromRGB(170, 0, 255)
+Glow.ScaleType = Enum.ScaleType.Slice
+Glow.SliceCenter = Rect.new(20, 20, 80, 80)
+Glow.ZIndex = 0
+Glow.Parent = Main
+
 local Corner = Instance.new("UICorner")
 Corner.CornerRadius = UDim.new(0, 16)
 Corner.Parent = Main
 
--- Menu Gauche
 local Menu = Instance.new("Frame")
 Menu.Size = UDim2.new(0, 150, 1, 0)
 Menu.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
@@ -68,7 +64,6 @@ Title.BackgroundTransparency = 1
 Title.Size = UDim2.new(1, 0, 0, 30)
 Title.Parent = Menu
 
--- Content zone
 local ContentFrame = Instance.new("Frame")
 ContentFrame.Size = UDim2.new(1, -170, 1, -20)
 ContentFrame.Position = UDim2.new(0, 160, 0, 10)
@@ -138,7 +133,6 @@ function UILib:CreatePage(name, callback)
 
 	if not CurrentPage then
 		
--- Forcer ouverture si première page
 if not CurrentPage then
     for _, p in pairs(Pages) do p.Visible = false end
     for _, b in pairs(Menu:GetChildren()) do
