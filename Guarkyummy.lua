@@ -45,6 +45,10 @@ Menu.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 Menu.Parent = Main
 Menu.ZIndex = 2
 
+local Corner2 = Instance.new("UICorner")
+Corner.CornerRadius = UDim.new(0, 16)
+Corner.Parent = Menu
+
 local MenuLayout = Instance.new("UIListLayout")
 MenuLayout.Padding = UDim.new(0, 6)
 MenuLayout.SortOrder = Enum.SortOrder.LayoutOrder
