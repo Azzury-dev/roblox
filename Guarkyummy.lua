@@ -22,10 +22,11 @@ Main.ZIndex = 1
 Main.Parent = ScreenGui
 Main.Active = true
 Main.Draggable = true
+Main.ClipsDescendants = false
 
 local Glow = Instance.new("ImageLabel")
-Glow.Size = UDim2.new(0, 620, 0, 370)
-Glow.Position = UDim2.new(0.5, -310, 0.5, -185)
+Glow.Size = UDim2.new(1, 20, 1, 20)
+Glow.Position = UDim2.new(0, -10, 0, -10)
 Glow.BackgroundTransparency = 1
 Glow.Image = "rbxassetid://4996891970"
 Glow.ImageColor3 = Color3.fromRGB(170, 0, 255)
