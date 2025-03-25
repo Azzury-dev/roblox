@@ -22,7 +22,7 @@ Main.ZIndex = 1
 Main.Parent = ScreenGui
 Main.Active = true
 Main.Draggable = true
-Main.ClipsDescendants = false
+Main.ClipsDescendants = true
 
 local Glow = Instance.new("ImageLabel")
 Glow.Size = UDim2.new(1, 20, 1, 20)
