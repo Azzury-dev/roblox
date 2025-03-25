@@ -137,7 +137,20 @@ function UILib:CreatePage(name, callback)
 	end)
 
 	if not CurrentPage then
-		Btn:FireMouseButton1Click()
+		
+-- Forcer ouverture si première page
+if not CurrentPage then
+    for _, p in pairs(Pages) do p.Visible = false end
+    for _, b in pairs(Menu:GetChildren()) do
+        if b:IsA("TextButton") then
+            b.UIStroke.Transparency = 1
+        end
+    end
+    PageFrame.Visible = true
+    Border.Transparency = 0
+    CurrentPage = name
+end
+
 	end
 
 	callback(PageFrame)
