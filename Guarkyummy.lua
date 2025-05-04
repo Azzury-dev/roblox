@@ -1,4 +1,3 @@
--- Guarkyummy UI Lib v2 - Design fidèle avec glow violet
 -- Par Azzury 🧃
 
 local UILib = {}
